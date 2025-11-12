@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Dark mode blue and purple theme */
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+  --primary: #3b82f6;
+  --primary-foreground: #0f172a;
+  --secondary: #7c3aed;
+  --secondary-foreground: #f8fafc;
+  --muted: #475569;
+  --muted-foreground: #cbd5e1;
+  --accent: #6366f1;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #6366f1;
+  --chart-1: #3b82f6;
+  --chart-2: #7c3aed;
+  --chart-3: #6366f1;
+  --chart-4: #8b5cf6;
+  --chart-5: #4f46e5;
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+  --primary: #3b82f6;
+  --primary-foreground: #0f172a;
+  --secondary: #7c3aed;
+  --secondary-foreground: #f8fafc;
+  --muted: #475569;
+  --muted-foreground: #cbd5e1;
+  --accent: #6366f1;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #6366f1;
+  --chart-1: #3b82f6;
+  --chart-2: #7c3aed;
+  --chart-3: #6366f1;
+  --chart-4: #8b5cf6;
+  --chart-5: #4f46e5;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated cybersecurity theme with blue and purple glows for dark mode */
+@layer components {
+  .cyber-glow {
+    @apply shadow-lg shadow-blue-500/60;
+  }
+
+  .cyber-text-glow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(124, 58, 237, 0.5), 0 0 30px rgba(99, 102, 241, 0.3);
+  }
+
+  .glow-active {
+    @apply shadow-lg shadow-blue-500/70 ring-2 ring-purple-500/60;
+  }
+
+  .neon-border {
+    @apply border border-blue-500/50 bg-gradient-to-br from-blue-500/10 to-purple-500/10;
+  }
+
+  .formula-box {
+    @apply bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-slate-700/50 backdrop-blur-sm;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), inset 0 0 20px rgba(124, 58, 237, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(99, 102, 241, 1), inset 0 0 20px rgba(124, 58, 237, 0.3);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
